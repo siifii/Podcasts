@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mlns="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="playlistItem"
+            type="com.siifii.thamanyah.domain.playlist.model.Playlist" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="rtl"
+        mlns:android="http://schemas.android.com/apk/res/android">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                style="?attr/collapsingToolbarLayoutLargeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_250"
+                android:background="@android:color/transparent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/white"
+                app:expandedTitleTextColor="@color/white"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        loadImageUrl="@{playlistItem.image}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:fitsSystemWindows="true"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tvPlaylistTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:fontFamily="@font/ibm_semibold"
+                        android:text="@{playlistItem.name}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_22"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPlaylistDescription"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_marginEnd="@dimen/dp_16"
+                        android:fontFamily="@font/ibm_regular"
+                        android:text="@{playlistItem.description}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintBottom_toTopOf="@+id/FBShuffle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPlaylistTitle"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/FBShuffle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="@dimen/dp_16"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:text="@string/shuffle_play"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@color/hailey_blue_600"
+                        app:icon="@drawable/ic_shuffle"
+                        app:iconTint="@color/white"
+                        app:layout_collapseMode="pin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_scrollFlags="scroll|enterAlways" />
+
+                    <ImageButton
+                        android:id="@+id/FBPlay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="@dimen/dp_16"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:src="@drawable/ic_play"
+                        app:backgroundTint="@color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:elevation="@dimen/dp_0"
+                    app:layout_collapseMode="pin"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:menu="@menu/podcast_toolbar_menu"
+                    app:navigationIcon="@drawable/ic_back_arrow"
+                    app:titleTextAppearance="?attr/textAppearanceTitleLarge"
+                    app:titleTextColor="@color/white">
+
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvEpisodes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:fontFamily="@font/ibm_semibold"
+                    android:text="@string/episodes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEpisodesDurationNumber"
+                    duration="@{playlistItem.episodeTotalDuration}"
+                    episodes="@{playlistItem.episodeCount}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:fontFamily="@font/ibm_regular"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/text_hint_color"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvEpisodes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvEpisodes" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEpisodes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:clipToPadding="true"
+                    android:paddingBottom="@dimen/dp_48"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEpisodesDurationNumber" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/bottomPlayerContainer"
+            layout="@layout/view_podcast_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

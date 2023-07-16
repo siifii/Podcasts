@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hailey_blue_600">#2972F3</color>
+    <color name="colorPrimaryVariant">#1954B6</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Night Theme Colors -->
+    <color name="hailey_blue_900">#0D47A1</color>
+    <color name="colorPrimaryVariantDark">#1565C0</color>
+    <color name="nightBackground">#333333</color>
+    <color name="nightTextPrimary">#FFFFFF</color>
+    <color name="nightTextSecondary">#CCCCCC</color>
+    <color name="nightColorBackground">#1A1A1A</color>
+    <color name="nightColorForeground">#444444</color>
+    <color name="text_hint_color">#A3A5A7</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="chimney_sweep_800">#1C222B</color>
+
+</resources>

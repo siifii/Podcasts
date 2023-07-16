@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Thamanyah" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor">@color/hailey_blue_600</item>
+
+        <item name="circularProgressIndicatorStyle">@style/Widget.App.CircularProgressIndicator
+        </item>
+        <item name="colorPrimary">@color/hailey_blue_600</item>
+        <item name="colorOnPrimary">#22FF0000</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/white</item>
+
+        <item name="colorSurface">@color/hailey_blue_600</item>
+        <item name="colorOnSurfaceVariant">@color/black</item>
+
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+
+
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+
+    </style>
+
+    <style name="AlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorAccent">@color/hailey_blue_600</item>
+        <item name="colorPrimary">@color/hailey_blue_600</item>
+    </style>
+
+    <style name="DialogTheme" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">94%</item>
+        <item name="android:windowMinWidthMinor">94%</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="colorAccent">@color/hailey_blue_600</item>
+    </style>
+
+    <style name="Widget.App.CircularProgressIndicator" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.CircularProgressIndicator</item>
+        <item name="trackThickness">20dp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.CircularProgressIndicator" parent="">
+        <item name="colorPrimary">@color/hailey_blue_600</item>
+    </style>
+
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorSurface">@color/text_hint_color</item>
+        <item name="color">@color/hailey_blue_600</item>
+        <item name="colorOnSurfaceVariant">@color/hailey_blue_600</item>
+    </style>
+
+
+</resources>

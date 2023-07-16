@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_podcast_favourite"
+        android:icon="@drawable/ic_favourite"
+        android:title="@string/menu_podcast_favourite"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_item2"
+        android:icon="@drawable/ic_see_more"
+        android:title="@string/menu_podcast_see_more"
+        app:showAsAction="ifRoom" />
+</menu>

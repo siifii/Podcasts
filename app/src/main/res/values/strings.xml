@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ثمانية</string>
+
+    <!--playlist-->
+    <string name="episodes">الحلقات</string>
+    <string name="shuffle_play"> تشغيل متنوع</string>
+    <string name="episode_and_duration_format">%1$d حلقة . %2$d ساعات</string>
+
+    <!--Home menu-->
+    <string name="menu_podcast_favourite">المفضلة</string>
+    <string name="menu_podcast_see_more">المزيد</string>
+    <string name="title_home">الصفحة الرئيسية</string>
+    <string name="title_dashboard">لوحة التحكم</string>
+    <string name="title_notifications">الإشعارات</string>
+
+    <!--Dialog-->
+    <string name="error">خطأ</string>
+    <string name="ok">حسنا</string>
+    <string name="un_expected_error">حدث خطأ غير متوقع</string>
+</resources>
